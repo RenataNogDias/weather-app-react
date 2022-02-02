@@ -1,38 +1,41 @@
-.App {
+.App body {
+  color: #59657a;
+  font-family: "Nunito", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #207cca;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  font-size: 10px;
+}
+
+.card-weather-app {
+  padding: 5px;
+  border-color: #42a5f5;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+#weather-description:first-letter {
+  text-transform: capitalize;
+}
+
+.weather-forecast {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.img-forecast {
+  width: 55px;
+  margin: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.open-source-link {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
 }

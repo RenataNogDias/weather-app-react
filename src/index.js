@@ -1,17 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import "./App.css";
+import Search from "./Search";
+import Today from "./Today";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function App() {
+  return (
+    <div>
+      <div className="container">
+        <div className="card card-weather-app">
+          <div className="card-body">
+            <Search />
+            <br />
+            <Today />
+            <br />
+            <div className="weather-forecast" id="weather-forecast"></div>
+          </div>
+        </div>
+      </div>
+      <small className="open-source-link">
+        <a
+          href="https://github.com/RenataNogDias/SheCodesPlus-project"
+          target="blank"
+        >
+          Open-source code
+        </a>{" "}
+        by Renata Dias
+      </small>
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
