@@ -21,7 +21,7 @@ function App() {
       </div>
       <small className="open-source-link">
         <a
-          href="https://github.com/RenataNogDias/SheCodesPlus-project"
+          href="https://github.com/RenataNogDias/weather-app-react"
           target="blank"
         >
           Open-source code
