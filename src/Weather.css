@@ -77,3 +77,16 @@
   list-style-type: none;
   font-size: 15px;
 }
+
+#weather-description:first-letter {
+  text-transform: capitalize;
+}
+
+.weather-forecast {
+  text-align: center;
+}
+
+.img-forecast {
+  width: 55px;
+  margin: 5px;
+}
