@@ -2,19 +2,15 @@ import React from "react";
 
 import "./App.css";
 
-import Search from "./Search";
-import Today from "./Today";
+import Weather from "./Weather";
 
 export default function App() {
   return (
-    <div>
+    <div className="App">
       <div className="container">
         <div className="card card-weather-app">
           <div className="card-body">
-            <Search />
-            <br />
-            <Today />
-            <br />
+            <Weather />
             <div className="weather-forecast" id="weather-forecast"></div>
           </div>
         </div>
