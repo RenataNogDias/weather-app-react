@@ -3,7 +3,7 @@
   display: inline-block;
 }
 
-.search-button {
+.primary-button {
   background-color: #eaf7fd;
   border-radius: 5px;
   border-color: #42a5f5;
@@ -14,7 +14,7 @@
   font-size: 15px;
 }
 
-#current-location-button {
+.secondary-button {
   background-color: #207cca;
   border-radius: 5px;
   border-color: #2a6da3;

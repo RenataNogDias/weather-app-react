@@ -18,12 +18,12 @@ export default function Weather() {
             />
           </div>
           <div className="col-3">
-            <button type="submit" className="search-button">
+            <button type="submit" className="primary-button">
               Search
             </button>
           </div>
           <div className="col-3">
-            <button type="submit" id="current-location-button">
+            <button type="submit" className="secondary-button">
               Current Location
             </button>
           </div>
