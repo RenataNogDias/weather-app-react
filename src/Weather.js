@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-import sun from "./images/sun.png";
 import "./Weather.css";
 
+import FormattedDate from "./FormattedDate";
+
 export default function Weather(props) {
-  const [ready, setReady] = useState(false);
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
@@ -19,7 +19,7 @@ export default function Weather(props) {
       windSpeed: response.data.wind.speed,
       description: response.data.weather[0].description,
       city: response.data.name,
-      dateTime: "Thursday | 23:51",
+      dateTime: new Date(response.data.dt * 1000),
       iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
@@ -57,7 +57,7 @@ export default function Weather(props) {
                 {weatherData.city}
               </div>
               <div className="col-6 col-today" id="current-time">
-                {weatherData.dateTime}
+                <FormattedDate date={weatherData.dateTime} />
               </div>
               <div className="col-6">
                 <img
