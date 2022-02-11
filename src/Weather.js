@@ -27,7 +27,6 @@ export default function Weather(props) {
   }
 
   function handleResponse(response) {
-    console.log(response);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
@@ -37,7 +36,7 @@ export default function Weather(props) {
       windSpeed: response.data.wind.speed,
       description: response.data.weather[0].description,
       city: response.data.name,
-      dateTime: new Date(response.data.dt * 1000),
+      date: new Date(response.data.dt * 1000),
       icon: response.data.weather[0].icon,
     });
   }

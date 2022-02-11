@@ -34,7 +34,7 @@ export default function WeatherTemperature(props) {
   } else {
     return (
       <div>
-        <span className="today-temperature">{fahrenheitTemperature()}</span>
+        <span className="today-temperature">{fahrenheitTemperature()}</span>{" "}
         <a href="/" onClick={showCelsius}>
           °C
         </a>{" "}
