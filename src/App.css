@@ -1,4 +1,4 @@
-.App body {
+.App {
   color: #59657a;
   font-family: "Nunito", sans-serif;
 }
@@ -19,4 +19,9 @@
 .App a {
   text-decoration: none;
   color: #207cca;
+}
+
+.App a:hover {
+  text-decoration: underline;
+  color: #1961a0;
 }
