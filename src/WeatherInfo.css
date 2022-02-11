@@ -1,0 +1,49 @@
+.card-today {
+  border-color: #9ad7f6;
+  background-color: #eaf7fd;
+  margin: 5px;
+}
+
+.col-today {
+  text-align: left;
+  font-size: 30px;
+}
+
+.today-temperature {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.temperature-units {
+  font-size: 50px;
+}
+
+.temperature-units a {
+  text-decoration: none;
+  color: #207cca;
+}
+
+.temperature-units a:hover {
+  text-decoration: underline;
+  color: #1961a0;
+}
+
+.temperature-units .active {
+  text-decoration: none;
+  color: #59657a;
+  cursor: default;
+}
+
+.temperature-units .active:hover {
+  text-decoration: none;
+  color: #59657a;
+}
+
+.today-weather-detail {
+  list-style-type: none;
+  font-size: 15px;
+}
+
+#weather-description:first-letter {
+  text-transform: capitalize;
+}
