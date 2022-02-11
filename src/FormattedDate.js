@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FormattedDate0(props) {
+export default function FormattedDate(props) {
   let weekday = props.date.getDay();
   let hours = props.date.getHours();
   let minutes = props.date.getMinutes();

@@ -3,10 +3,28 @@ import React, { useState } from "react";
 
 import "./Weather.css";
 
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
+
+  function search() {
+    const apiKey = "73a00877081bd43422bdee0f3022beb5";
+    let units = "metric";
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+
+    axios.get(apiURL).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
 
   function handleResponse(response) {
     console.log(response);
@@ -27,7 +45,7 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form id="search-city-form">
+        <form id="search-city-form" onSubmit={handleSubmit}>
           <div className="row">
             <div className="mb-3 col-6">
               <input
@@ -36,6 +54,7 @@ export default function Weather(props) {
                 className="form-control search-box-city"
                 id="search-city-input"
                 autoComplete="off"
+                onChange={handleCityChange}
               />
             </div>
             <div className="col-3">
@@ -50,54 +69,11 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <div className="card card-today">
-          <div className="card-body">
-            <div className="row">
-              <div className="col-6 col-today" id="city-element">
-                {weatherData.city}
-              </div>
-              <div className="col-6 col-today" id="current-time">
-                <FormattedDate date={weatherData.dateTime} />
-              </div>
-              <div className="col-6">
-                <img
-                  src={weatherData.iconUrl}
-                  alt={weatherData.description}
-                  className="img-today"
-                  id="today-weather-icon"
-                />
-              </div>
-              <span className="col today-temperature">
-                <span id="today-temperature">
-                  {Math.round(weatherData.temperature)}
-                </span>
-                <span className="temperature-units">°C</span>
-                <span>
-                  <ul className="today-weather-detail">
-                    <li id="temperature-interval">
-                      {Math.round(weatherData.minTemperature)}ºC |{" "}
-                      {Math.round(weatherData.maxTemperature)}ºC
-                    </li>
-                    <li id="weather-description">{weatherData.description}</li>
-                    <li id="wind-speed">
-                      Wind speed: {weatherData.windSpeed} km/h
-                    </li>
-                  </ul>
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
-    const apiKey = "73a00877081bd43422bdee0f3022beb5";
-    let units = "metric";
-    let searchedCity = "Porto";
-    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=${units}`;
-
-    axios.get(apiURL).then(handleResponse);
-
+    search();
     return <h2>Loading</h2>;
   }
 }
