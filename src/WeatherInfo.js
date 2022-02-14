@@ -17,7 +17,7 @@ export default function WeatherInfo(props) {
               <FormattedDate date={props.data.date} />
             </div>
             <div className="col-6">
-              <WeatherIcon iconCode={props.data.icon} />
+              <WeatherIcon iconCode={props.data.icon} size={100} />
             </div>
             <span className="col today-temperature">
               <WeatherTemperature celsiusTemperature={props.data.temperature} />

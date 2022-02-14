@@ -1,5 +1,10 @@
-.WeatherIcon {
+.WeatherIcon-today {
   margin-left: 60px;
   margin-top: 30px;
   display: block;
+}
+
+.WeatherIcon-forecast {
+  width: 55px;
+  margin: 5px;
 }
