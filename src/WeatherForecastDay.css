@@ -1,3 +1,9 @@
 .weather-icon-forecast {
   text-align: center;
 }
+
+@media (max-width: 576px) {
+  .WeatherForecastDay {
+    margin-top: 20px;
+  }
+}

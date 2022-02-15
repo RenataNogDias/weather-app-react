@@ -10,24 +10,28 @@ export default function WeatherInfo(props) {
     <div className="WeatherInfo">
       <div className="card card-today">
         <div className="card-body">
-          <div className="row">
-            <div className="col-6 col-today">{props.data.city}</div>
-            <div className="col-6 col-today">
+          <div className="row blue-card">
+            <div className="col-md-6 col-today">{props.data.city}</div>
+            <div className="col-md-6 col-today">
               <FormattedDate date={props.data.date} />
             </div>
-            <div className="col-6 weather-icon-today">
+            <div className="col-md weather-icon-today">
               <WeatherIcon iconCode={props.data.icon} size={100} />
             </div>
-            <span className="col today-temperature">
+            <span className="col-md today-temperature">
               {Math.round(props.data.temperature)}°C
               <span>
                 <ul className="today-weather-detail">
-                  <li>
+                  <li className="d-none d-sm-block">
                     {Math.round(props.data.minTemperature)} ºC |{" "}
                     {Math.round(props.data.maxTemperature)} ºC
                   </li>
-                  <li id="weather-description">{props.data.description}</li>
-                  <li>Wind speed: {props.data.windSpeed} km/h</li>
+                  <li className="d-none d-sm-block" id="weather-description">
+                    {props.data.description}
+                  </li>
+                  <li className="d-none d-sm-block">
+                    Wind speed: {props.data.windSpeed} km/h
+                  </li>
                 </ul>
               </span>
             </span>

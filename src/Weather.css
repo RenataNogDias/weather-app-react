@@ -9,8 +9,8 @@
   border-color: #42a5f5;
   color: #59657a;
   display: inline-block;
+  max-width: 140px;
   padding: 6px;
-  width: 140px;
   font-size: 15px;
 }
 
@@ -21,6 +21,6 @@
   color: #fff;
   display: inline-block;
   padding: 6px;
-  width: 140px;
+  max-width: 140px;
   font-size: 15px;
 }
