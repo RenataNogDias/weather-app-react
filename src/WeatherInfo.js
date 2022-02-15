@@ -26,10 +26,10 @@ export default function WeatherInfo(props) {
                     {Math.round(props.data.minTemperature)} ºC |{" "}
                     {Math.round(props.data.maxTemperature)} ºC
                   </li>
-                  <li className="d-none d-sm-block" id="weather-description">
+                  <li className="d-none d-md-block" id="weather-description">
                     {props.data.description}
                   </li>
-                  <li className="d-none d-sm-block">
+                  <li className="d-none d-md-block">
                     Wind speed: {props.data.windSpeed} km/h
                   </li>
                 </ul>
